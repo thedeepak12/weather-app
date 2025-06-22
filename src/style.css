@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.4rem;
+  color: #ffffff;
+  background-color: #48484a;
+  height: 4rem;
+  width: 100%;
+}
+
+.weather-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  height: 5rem;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+input {
+  width: 400px;
+  height: 30px;
+  padding-left: 10px;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+button {
+  width: 80px;
+  height: 30px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.9rem;
+  background-color: #48484a;
+  color: #ffffff;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
