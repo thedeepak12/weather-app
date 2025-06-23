@@ -1,5 +1,6 @@
 import './style.css';
 import { fetchWeather } from './modules/api';
+import { processWeatherData } from './modules/process';
 
 const weatherForm = document.querySelector('.weather-form');
 const cityInput = document.querySelector('.city-input');
@@ -10,7 +11,8 @@ weatherForm.addEventListener('submit', async (e) => {
   if (city) {
     try {
       const weatherData = await fetchWeather(city);
-      console.log('Weather data:', weatherData);
+      const processedData = processWeatherData(weatherData);
+      console.log('Processed data:', processedData);
     } catch (error) {
       console.error('Error:', error.message);
     }
