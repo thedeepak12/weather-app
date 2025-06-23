@@ -8,7 +8,7 @@ export function processWeatherData(data) {
   const {
     name: city,
     main: { temp, feels_like, humidity, pressure },
-    weather: [{ description: condition }],
+    weather: [{ description: condition, icon: iconCode }],
     wind: { speed, deg },
     visibility,
   } = data;
@@ -28,5 +28,6 @@ export function processWeatherData(data) {
     humidity: `${humidity}%`,
     dewPoint: `${dewPoint}°C`,
     visibility: `${visibility / 1000}km`,
+    iconCode,
   };
 }
