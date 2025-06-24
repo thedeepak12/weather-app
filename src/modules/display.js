@@ -17,12 +17,12 @@ export function displayWeatherInfo(data) {
   cityDisplay.textContent = data.city;
   tempDisplay.textContent = `Temperature: ${data.temperature}°C`;
   feelsLikeDisplay.textContent = `Feels like: ${data.feelsLike}°C`;
-  humidityDisplay.textContent = data.humidity;
+  humidityDisplay.textContent = `Humidity: ${data.humidity}`;
   windDisplay.textContent = `Wind: ${data.windSpeed}`;
-  pressureDisplay.textContent = data.pressure;
+  pressureDisplay.textContent = `Pressure: ${data.pressure}`;
   dewPointDisplay.textContent = `Dew point: ${data.dewPoint}`;
   visibilityDisplay.textContent = `Visibility: ${data.visibility}`;
-  descDisplay.textContent = data.condition;
+  descDisplay.textContent = `Condition: ${data.condition}`;
 
   cityDisplay.classList.add('cityDisplay');
   tempDisplay.classList.add('tempDisplay');
@@ -36,16 +36,16 @@ export function displayWeatherInfo(data) {
   weatherIcon.classList.add('weatherIcon');
 
   const iconImg = document.createElement('img');
-  const iconUrl = `http://openweathermap.org/img/wn/${data.iconCode}.png`;
+  const iconUrl = `http://openweathermap.org/img/wn/${data.iconCode}@2x.png`;
   iconImg.src = iconUrl;
   iconImg.alt = data.condition || 'Weather icon';
   iconImg.onerror = () => {
-    console.error(`Failed to load icon from ${iconUrl}`);
     iconImg.src = '';
   };
   weatherIcon.appendChild(iconImg);
 
   card.appendChild(cityDisplay);
+  card.appendChild(weatherIcon);
   card.appendChild(tempDisplay);
   card.appendChild(feelsLikeDisplay);
   card.appendChild(humidityDisplay);
@@ -54,7 +54,6 @@ export function displayWeatherInfo(data) {
   card.appendChild(dewPointDisplay);
   card.appendChild(visibilityDisplay);
   card.appendChild(descDisplay);
-  card.appendChild(weatherIcon);
 }
 
 export function displayError(message) {

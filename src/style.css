@@ -68,3 +68,14 @@ button {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font-family: "Lato", sans-serif;
 }
+
+@media (max-width: 500px) {
+  .city-input {
+    margin-left: 15px;
+  }
+
+  button {
+    margin-right: 15px;
+    font-size: 0.7rem;
+  }
+}
