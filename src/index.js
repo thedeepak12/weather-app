@@ -13,14 +13,9 @@ weatherForm.addEventListener('submit', async (e) => {
     try {
       const weatherData = await fetchWeather(city);
       const processedData = processWeatherData(weatherData);
-      console.log("Weather data: ", weatherData);
-      console.log('Processed data:', processedData);
       displayWeatherInfo(processedData);
     } catch (error) {
-      console.error('Error:', error.message);
       displayError(error.message);
     }
-  } else {
-    console.log('Please enter a city');
   }
 });
